@@ -54,13 +54,7 @@ export default (app: Application): any => {
         allowNull: false
       },
       url: {
-        type: DataTypes.VIRTUAL,
-        get(this: any): string {
-          return `${INVENTORY_API_ENDPOINT}/${this.id as string}`
-        },
-        set(): void {
-          throw new Error('Do not try to set the `url` value!')
-        }
+        type: DataTypes.VIRTUAL
       },
       ownedFileIds: {
         type: DataTypes.TEXT({ length: 'medium' }),

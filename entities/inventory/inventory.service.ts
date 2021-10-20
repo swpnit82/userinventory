@@ -24,10 +24,8 @@ export default (app: Application): any => {
    */
   const event = new Inventory (options, app)
   event.docs = inventoryDocs
-
   app.use('inventory', event)
 
   const service = app.service('inventory')
-
   service.hooks(hooks)
 }

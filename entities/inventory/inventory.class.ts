@@ -1,6 +1,6 @@
 import { Service, SequelizeServiceOptions } from 'feathers-sequelize'
 import { Application } from '../../../declarations'
-import { Params } from '@feathersjs/feathers'
+//import { Params } from '@feathersjs/feathers'
 
 export class Inventory extends Service {
   app: Application

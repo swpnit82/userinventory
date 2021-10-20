@@ -48,7 +48,7 @@ export default {
     all: [authenticate('jwt')] /* authenticate('jwt') */,
     find: [
       //attachOwnerIdInQuery('userId'),
-      addAssociations({
+      /*addAssociations({
         models: [
           {
             model: 'entity',
@@ -59,10 +59,10 @@ export default {
             ]
           }
         ]
-      })
+      })*/
     ],
     get: [
-      addAssociations({
+      /*addAssociations({
         models: [
           {
             model: 'entity',
@@ -73,7 +73,7 @@ export default {
             ]
           }
         ]
-      })
+      })*/
     ],
     create: [],
     update: [],

@@ -54,7 +54,8 @@ export default (app: Application): any => {
         allowNull: false
       },
       url: {
-        type: DataTypes.VIRTUAL
+        type: DataTypes.STRING,
+        allowNull: true
       },
       ownedFileIds: {
         type: DataTypes.TEXT({ length: 'medium' }),

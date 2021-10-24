@@ -10,17 +10,17 @@ export default (app: Application): any => {
       type: {
         type: DataTypes.STRING,
         allowNull: false,
-        primaryKey: true,
+        // primaryKey: true,
         unique: true,
         values: Object.keys(inventoryTypeEnum )
       },
-      id : {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV1,
-        allowNull: false,
-        primaryKey: true,
-        unique: true,
-      }
+       inventoryTypeId : {
+         type: DataTypes.UUID,
+         defaultValue: DataTypes.UUIDV1,
+         allowNull: false,
+         primaryKey: true,
+         unique: true,
+       }
     },
     {
       hooks: {
@@ -35,8 +35,8 @@ export default (app: Application): any => {
     }
   )
 
-  ;(inventoryType as any).assocate = (models: any): void => {
-    ;(inventoryType as any).hasMany(models.collection, { foreignKey: 'inventoryType' })
+  ;(inventoryType as any).associate = (models: any): void => { 
+    ;(inventoryType as any).hasMany(models.inventory, { foreignKey: 'inventoryTypeId', required: true})
   }
 
   return inventoryType

@@ -10,16 +10,11 @@ export default (app: Application): any => {
   const inventory = sequelizeClient.define(
     'inventory',
     {
-      id: {
+      inventoryId: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV1,
         allowNull: false,
         primaryKey: true
-      },
-      inventoryTypeId: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV1,
-        allowNull: false,
       },
       sid: {
         type: DataTypes.STRING,
@@ -55,7 +50,13 @@ export default (app: Application): any => {
       },
       url: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
+        // get(this: any): string {
+        //   return `${INVENTORY_API_ENDPOINT}/${this.id as string}`
+        // },
+        // set(): void {
+        //   throw new Error('Do not try to set the `url` value!')
+        // }
       },
       ownedFileIds: {
         type: DataTypes.TEXT({ length: 'medium' }),
@@ -71,15 +72,11 @@ export default (app: Application): any => {
     }
   )
 
+  
+
   ;(inventory as any).associate = (models: any): void => {
-    ;(inventory as any).belongsTo(models.inventory_type, { foreignKey: 'type', required: true })
-    ;(inventory as any).belongsTo(models.static_resource, {
-      as: 'thumbnail_owned_file',
-      required: false,
-      constraints: false
-    })
-    ;(inventory as any).hasMany(models.entity, { required: false, constraints: false, delete: 'cascade' })
-    ;(inventory as any).belongsTo(models.location)
+    ;(inventory as any).belongsTo(models.inventory_type, { foreignKey: 'inventoryTypeId', required: true })
+    ;(inventory as any).hasMany(models.user_inventory, { foreignKey: 'inventoryId', required: true})
   }
 
   return inventory

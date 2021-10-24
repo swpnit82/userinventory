@@ -12,9 +12,6 @@
         id: {
             type: 'string'
         },
-        inventoryTypeId: {
-            type: 'string'
-        },
           sid: {
             type: 'string'
           },
@@ -29,6 +26,9 @@
           },
           metadata: {
             type: 'object'
+          },
+          type: {
+            type: 'string'
           },
           isPublic: {
             type: 'integer'

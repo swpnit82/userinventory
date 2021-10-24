@@ -10,9 +10,6 @@
         properties: {
           type: {
             type: 'string'
-          },
-          id:{
-              type: 'string'
           }
         }
       },

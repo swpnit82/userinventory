@@ -6,23 +6,11 @@ export default (app: Application): any => {
   const userInventory = sequelizeClient.define(
     'user_inventory',
     {
-      id : {
+      userInventoryId: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV1,
         allowNull: false,
-        primaryKey: true,
-      },
-      userId : {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV1,
-        allowNull: false,
-        primaryKey: true,
-      },
-      inventoryId : {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV1,
-        allowNull: false,
-        primaryKey: true,
+        primaryKey: true
       },
       quantity: {
         type: DataTypes.INTEGER,
@@ -47,7 +35,8 @@ export default (app: Application): any => {
   )
 
   ;(userInventory as any).assocate = (models: any): void => {
-    ;(userInventory as any).hasMany(models.collection, { foreignKey: 'userInventory' })
+    ;(userInventory as any).belongsTo(models.inventory, { foreignKey: 'inventoryId', required: true })
+    ;(userInventory as any).belongsTo(models.user, { foreignKey: 'userId', required: true})
   }
 
   return userInventory

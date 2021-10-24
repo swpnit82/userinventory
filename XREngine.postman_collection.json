@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "e0ee2918-79a4-4c42-b244-96f2af43f220",
+		"name": "XREngine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "InventoryType",
+			"item": [
+				{
+					"name": "InventoryType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{XRENGINE_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://127.0.0.1:3030/inventory-type?inventoryTypeId=6be2e9c0-3494-11ec-9203-51c5fea77b76",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3030",
+							"path": [
+								"inventory-type"
+							],
+							"query": [
+								{
+									"key": "inventoryTypeId",
+									"value": "6be2e9c0-3494-11ec-9203-51c5fea77b76"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InventoryType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{XRENGINE_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"type\": \"skill inventory x6\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:3030/inventory-type",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3030",
+							"path": [
+								"inventory-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InventoryType",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{XRENGINE_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"8d7a2680-30fb-11ec-b0c9-3b1d5aa407d3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:3030/inventory-type?id=619bc4c0-31db-11ec-8270-9532f954fc47",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3030",
+							"path": [
+								"inventory-type"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "619bc4c0-31db-11ec-8270-9532f954fc47"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Inventory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{XRENGINE_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://127.0.0.1:3030/inventory",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3030",
+							"path": [
+								"inventory"
+							],
+							"query": [
+								{
+									"key": "inventoryId",
+									"value": "53d34db0-34b3-11ec-96ea-01d72e4b5050",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inventory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{XRENGINE_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"inventoryTypeId\": \"6be2e9c0-3494-11ec-9203-51c5fea77b76\",\n    \"name\": \"normal2\",\n    \"metadata\": {\"eyes\":\"joy\",\"mouth\":\"surprised\",\"level\":2,\"stamina\":2.3},\n    \"description\": \"normal\",\n    \"url\": \"https://arkh-frontend.s3.us-west-1.amazonaws.com/spacejet/new1.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:3030/inventory",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3030",
+							"path": [
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inventory",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{XRENGINE_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"68082030-31d9-11ec-8270-9532f954fc47\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:3030/inventory?id=f3373670-32a4-11ec-975d-23ac7291af2f",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3030",
+							"path": [
+								"inventory"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "f3373670-32a4-11ec-975d-23ac7291af2f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserInventory",
+			"item": [
+				{
+					"name": "UserInventory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{XRENGINE_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://127.0.0.1:3030/user-inventory",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3030",
+							"path": [
+								"user-inventory"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2695d150-2e65-11ec-a5db-0d14619fa286",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserInventory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{XRENGINE_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"2695d150-2e65-11ec-a5db-0d14619fa286\",\n    \"inventoryId\": \"aea1e380-3500-11ec-916b-a967658a8393\",\n    \"quantity\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:3030/user-inventory",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3030",
+							"path": [
+								"user-inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserInventory",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{XRENGINE_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"8a030770-31c7-11ec-87cc-5fb148df0cfd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:3030/user-inventory",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3030",
+							"path": [
+								"user-inventory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

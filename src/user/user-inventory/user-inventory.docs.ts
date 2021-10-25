@@ -14,7 +14,7 @@
           userId: {
               type: 'string'
           },
-          inventoryId: {
+          inventoryItemId: {
             type: 'string'
             },
           quantity: {

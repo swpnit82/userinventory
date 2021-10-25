@@ -6,7 +6,7 @@
 
  export default {
     definitions: {
-      inventory: {
+      'inventory-item': {
         type: 'object',
         properties: {
         id: {
@@ -41,9 +41,9 @@
           }
         }
       },
-      inventory_list: {
+      'inventory-item_list': {
         type: 'array',
-        items: { $ref: '#/definitions/inventory' }
+        items: { $ref: '#/definitions/inventory-item' }
       }
     },
     securities: ['create', 'update', 'patch', 'remove'],

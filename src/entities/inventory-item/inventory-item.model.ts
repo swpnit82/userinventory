@@ -1,16 +1,13 @@
 import { Sequelize, DataTypes } from 'sequelize'
 import { Application } from '../../../declarations'
 import generateShortId from '../../util/generate-short-id'
-import config from '../../appconfig'
-
-const INVENTORY_API_ENDPOINT = `${config.server.url}/inventory`
 
 export default (app: Application): any => {
   const sequelizeClient: Sequelize = app.get('sequelizeClient')
-  const inventory = sequelizeClient.define(
-    'inventory',
+  const inventoryItem = sequelizeClient.define(
+    'inventory_item',
     {
-      inventoryId: {
+      inventoryItemId: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV1,
         allowNull: false,
@@ -74,10 +71,10 @@ export default (app: Application): any => {
 
   
 
-  ;(inventory as any).associate = (models: any): void => {
-    ;(inventory as any).belongsTo(models.inventory_type, { foreignKey: 'inventoryTypeId', required: true })
-    ;(inventory as any).hasMany(models.user_inventory, { foreignKey: 'inventoryId', required: true})
+  ;(inventoryItem as any).associate = (models: any): void => {
+    ;(inventoryItem as any).belongsTo(models.inventory_item_type, { foreignKey: 'inventoryItemTypeId', required: true })
+    ;(inventoryItem as any).hasMany(models.user_inventory, { foreignKey: 'inventoryItemId', required: true})
   }
 
-  return inventory
+  return inventoryItem
 }

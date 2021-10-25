@@ -35,7 +35,7 @@ export default (app: Application): any => {
   )
 
   ;(userInventory as any).assocate = (models: any): void => {
-    ;(userInventory as any).belongsTo(models.inventory, { foreignKey: 'inventoryId', required: true })
+    ;(userInventory as any).belongsTo(models.inventory_item, { foreignKey: 'inventoryItemId', required: true })
     ;(userInventory as any).belongsTo(models.user, { foreignKey: 'userId', required: true})
   }
 

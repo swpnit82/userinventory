@@ -16,23 +16,6 @@ const logRequest = (options = {}) => {
   }
 }
 
-// function processInventoryEntities(inventory: any): any {
-//   const entitesObject: { [key: string]: any } = {}
-//   const inventoryJson = inventory.toJSON()
-//   let rootEntity: any = null
-//   inventoryJson.entities.forEach((entity: any) => {
-//     if (entity.parent === null) {
-//       delete entity.parent
-//       delete entity.index
-//       rootEntity = entity
-//     }
-//     entitesObject[entity.entityId] = entity
-//   })
-//   inventoryJson.root = rootEntity?.entityId
-//   inventoryJson.entities = entitesObject
-//   return inventoryJson
-// }
-
 const { authenticate } = authentication.hooks
 
 export default {
@@ -42,27 +25,27 @@ export default {
       addAssociations({
         models: [
           {
-            model: 'inventory-type',
+            model: 'inventory-item-type',
           }
         ]
       })
     ],
     get: [
       async context => {
-        const inventoryTypeId = context.result.inventoryTypeId;
+        const inventoryItemTypeId = context.result.inventoryItemTypeId;
 
         // Since context.app.service('users').get returns a promise we can `await` it
-        const inventoryType = await context.app.service('inventory-type').get(inventoryTypeId);
+        const inventoryItemType = await context.app.service('inventory-item-type').get(inventoryItemTypeId);
 
         // Update the result (the message)
-        context.result.inventoryType = inventoryType;
+        context.result.inventoryItemType = inventoryItemType;
         // Returning will resolve the promise with the `context` object
         return context;
       },
       addAssociations({
         models: [
           {
-            model: 'inventory-type',
+            model: 'inventory-item-type',
           }
         ]
       })

@@ -6,7 +6,7 @@ import { Application } from '../../../declarations'
  *
  * @author Vyacheslav Solovjov
  */
-export class InventoryType extends Service {
+export class InventoryItemType extends Service {
   public docs: any
   constructor(options: Partial<SequelizeServiceOptions>, app: Application) {
     super(options)

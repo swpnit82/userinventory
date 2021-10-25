@@ -1,5 +1,5 @@
-export const inventorySeed = {
-    path: 'inventory',
+export const inventoryItemSeed = {
+    path: 'inventory-item',
     randomize: false,
     templates: [
       {

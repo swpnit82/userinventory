@@ -5,7 +5,7 @@
  */
  export default {
     definitions: {
-      'inventory-type': {
+      'inventory-item-type': {
         type: 'object',
         properties: {
           type: {
@@ -13,9 +13,9 @@
           }
         }
       },
-      'inventory-type_list': {
+      'inventory-item-type_list': {
         type: 'array',
-        items: { $ref: '#/definitions/inventory-type' }
+        items: { $ref: '#/definitions/inventory-item-type' }
       }
     }
   }

@@ -1,20 +1,20 @@
 import { Sequelize, DataTypes } from 'sequelize'
 import { Application } from '../../../declarations'
-import { inventoryType as inventoryTypeEnum } from './inventoryType'
+import { inventoryItemType as inventoryItemTypeEnum } from './inventoryItemType'
 
 export default (app: Application): any => {
   const sequelizeClient: Sequelize = app.get('sequelizeClient')
-  const inventoryType = sequelizeClient.define(
-    'inventory_type',
+  const inventoryItemType = sequelizeClient.define(
+    'inventory_item_type',
     {
-      type: {
+      inventoryItemType: {
         type: DataTypes.STRING,
         allowNull: false,
         // primaryKey: true,
         unique: true,
-        values: Object.keys(inventoryTypeEnum )
+        values: Object.keys(inventoryItemTypeEnum )
       },
-       inventoryTypeId : {
+       inventoryItemTypeId : {
          type: DataTypes.UUID,
          defaultValue: DataTypes.UUIDV1,
          allowNull: false,
@@ -35,9 +35,9 @@ export default (app: Application): any => {
     }
   )
 
-  ;(inventoryType as any).associate = (models: any): void => { 
-    ;(inventoryType as any).hasMany(models.inventory, { foreignKey: 'inventoryTypeId', required: true})
+  ;(inventoryItemType as any).associate = (models: any): void => { 
+    ;(inventoryItemType as any).hasMany(models.inventory_item, { foreignKey: 'inventoryItemTypeId', required: true})
   }
 
-  return inventoryType
+  return inventoryItemType
 }

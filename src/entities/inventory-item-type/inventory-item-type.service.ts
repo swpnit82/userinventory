@@ -1,12 +1,12 @@
 import { Application } from '../../../declarations'
-import { InventoryType } from './inventory-type.class'
-import createModel from './inventory-type.model'
-import hooks from './inventory-type.hooks'
-import inventoryTypeDocs from './inventory-type.docs'
+import { InventoryItemType } from './inventory-item-type.class'
+import createModel from './inventory-item-type.model'
+import hooks from './inventory-item-type.hooks'
+import inventoryTypeDocs from './inventory-item-type.docs'
 
 declare module '../../../declarations' {
   interface ServiceTypes {
-    'inventory-type': InventoryType 
+    'inventory-item-type': InventoryItemType 
   }
 }
 
@@ -22,11 +22,11 @@ export default (app: Application): any => {
    *
    * @author DRC
    */
-  const event = new InventoryType(options, app)
+  const event = new InventoryItemType(options, app)
   event.docs = inventoryTypeDocs 
-  app.use('inventory-type', event)
+  app.use('inventory-item-type', event)
 
-  const service = app.service('inventory-type')
+  const service = app.service('inventory-item-type')
 
   service.hooks(hooks)
 }

@@ -1,6 +1,7 @@
 import { Sequelize, DataTypes } from 'sequelize'
 import { Application } from '../../../declarations'
 import generateShortId from '../../util/generate-short-id'
+import config from '../../appconfig'
 
 export default (app: Application): any => {
   const sequelizeClient: Sequelize = app.get('sequelizeClient')
@@ -73,8 +74,9 @@ export default (app: Application): any => {
 
   ;(inventoryItem as any).associate = (models: any): void => {
     ;(inventoryItem as any).belongsTo(models.inventory_item_type, { foreignKey: 'inventoryItemTypeId', required: true })
-    ;(inventoryItem as any).hasMany(models.user_inventory, { foreignKey: 'inventoryItemId', required: true})
+    ;(inventoryItem as any).belongsToMany(models.user, { through: models.user_inventory,foreignKey: 'inventoryItemId'})
   }
+  //A.belongsToMany(B, { through: 'C' });
 
   return inventoryItem
 }

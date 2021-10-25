@@ -14,7 +14,7 @@ export default (app: Application): any => {
       },
       quantity: {
         type: DataTypes.INTEGER,
-        defaultValue: 0,
+        defaultValue: 1,
         allowNull: false,
       },
       addedOn: {
@@ -35,8 +35,8 @@ export default (app: Application): any => {
   )
 
   ;(userInventory as any).assocate = (models: any): void => {
-    ;(userInventory as any).belongsTo(models.inventory_item, { foreignKey: 'inventoryItemId', required: true })
-    ;(userInventory as any).belongsTo(models.user, { foreignKey: 'userId', required: true})
+    ;(userInventory as any).belongsTo(models.inventory_item, { required: true, allowNull: false })
+    ;(userInventory as any).belongsTo(models.user, { required: true, allowNull: false})
   }
 
   return userInventory

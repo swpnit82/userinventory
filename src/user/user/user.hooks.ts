@@ -40,7 +40,12 @@ export default {
             model: 'scope'
           },
           {
-            model: 'user-inventory'
+            model: 'inventory-item',
+            include: [
+              {
+                model: 'inventory-item-type'
+              }
+            ]
           }
         ]
       })
@@ -67,7 +72,12 @@ export default {
             model: 'scope'
           },
           {
-            model: 'user-inventory'
+            model: 'inventory-item',
+            include: [
+              {
+                model: 'inventory-item-type'
+              }
+            ]
           }
         ]
       })
@@ -94,6 +104,14 @@ export default {
           },
           {
             model: 'scope'
+          },
+          {
+            model: 'inventory-item',
+            include: [
+              {
+                model: 'inventory-item-type'
+              }
+            ]
           }
         ]
       }),

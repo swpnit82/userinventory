@@ -26,26 +26,21 @@ export default {
         models: [
           {
             model: 'inventory-item-type',
+          },
+          {
+            model: 'user',
           }
         ]
       })
     ],
     get: [
-      async context => {
-        const inventoryItemTypeId = context.result.inventoryItemTypeId;
-
-        // Since context.app.service('users').get returns a promise we can `await` it
-        const inventoryItemType = await context.app.service('inventory-item-type').get(inventoryItemTypeId);
-
-        // Update the result (the message)
-        context.result.inventoryItemType = inventoryItemType;
-        // Returning will resolve the promise with the `context` object
-        return context;
-      },
       addAssociations({
         models: [
           {
             model: 'inventory-item-type',
+          },
+          {
+            model: 'user',
           }
         ]
       })

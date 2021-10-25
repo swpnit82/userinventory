@@ -6,10 +6,10 @@
 	},
 	"item": [
 		{
-			"name": "InventoryType",
+			"name": "InventoryItemType",
 			"item": [
 				{
-					"name": "InventoryType",
+					"name": "InventoryItemType",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -20,7 +20,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://127.0.0.1:3030/inventory-type?inventoryTypeId=6be2e9c0-3494-11ec-9203-51c5fea77b76",
+							"raw": "https://127.0.0.1:3030/inventory-item-type",
 							"protocol": "https",
 							"host": [
 								"127",
@@ -30,12 +30,13 @@
 							],
 							"port": "3030",
 							"path": [
-								"inventory-type"
+								"inventory-item-type"
 							],
 							"query": [
 								{
-									"key": "inventoryTypeId",
-									"value": "6be2e9c0-3494-11ec-9203-51c5fea77b76"
+									"key": "inventoryItemTypeId",
+									"value": "c961fd50-3554-11ec-9b03-3f60154593fd",
+									"disabled": true
 								}
 							]
 						}
@@ -43,7 +44,7 @@
 					"response": []
 				},
 				{
-					"name": "InventoryType",
+					"name": "InventoryItemType",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -55,7 +56,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"type\": \"skill inventory x6\"}",
+							"raw": "{\"inventoryItemType\": \"skill inventory x6\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -63,7 +64,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://127.0.0.1:3030/inventory-type",
+							"raw": "https://127.0.0.1:3030/inventory-item-type",
 							"protocol": "https",
 							"host": [
 								"127",
@@ -73,14 +74,14 @@
 							],
 							"port": "3030",
 							"path": [
-								"inventory-type"
+								"inventory-item-type"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "InventoryType",
+					"name": "InventoryItemType",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -100,7 +101,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://127.0.0.1:3030/inventory-type?id=619bc4c0-31db-11ec-8270-9532f954fc47",
+							"raw": "https://127.0.0.1:3030/inventory-item-type?inventoryItemTypeId=c961fd50-3554-11ec-9b03-3f60154593fd",
 							"protocol": "https",
 							"host": [
 								"127",
@@ -110,12 +111,12 @@
 							],
 							"port": "3030",
 							"path": [
-								"inventory-type"
+								"inventory-item-type"
 							],
 							"query": [
 								{
-									"key": "id",
-									"value": "619bc4c0-31db-11ec-8270-9532f954fc47"
+									"key": "inventoryItemTypeId",
+									"value": "c961fd50-3554-11ec-9b03-3f60154593fd"
 								}
 							]
 						}
@@ -125,10 +126,10 @@
 			]
 		},
 		{
-			"name": "Inventory",
+			"name": "InventoryItem",
 			"item": [
 				{
-					"name": "Inventory",
+					"name": "InventoryItem",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -139,7 +140,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://127.0.0.1:3030/inventory",
+							"raw": "https://127.0.0.1:3030/inventory-item",
 							"protocol": "https",
 							"host": [
 								"127",
@@ -149,7 +150,7 @@
 							],
 							"port": "3030",
 							"path": [
-								"inventory"
+								"inventory-item"
 							],
 							"query": [
 								{
@@ -163,7 +164,7 @@
 					"response": []
 				},
 				{
-					"name": "Inventory",
+					"name": "InventoryItem",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -175,7 +176,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"inventoryTypeId\": \"6be2e9c0-3494-11ec-9203-51c5fea77b76\",\n    \"name\": \"normal2\",\n    \"metadata\": {\"eyes\":\"joy\",\"mouth\":\"surprised\",\"level\":2,\"stamina\":2.3},\n    \"description\": \"normal\",\n    \"url\": \"https://arkh-frontend.s3.us-west-1.amazonaws.com/spacejet/new1.png\"\n}",
+							"raw": "{\n    \"inventoryItemTypeId\": \"0eaf1770-357e-11ec-bc67-41a95d6eca05\",\n    \"name\": \"normal1\",\n    \"metadata\": {\"eyes\":\"joy\",\"mouth\":\"surprised\",\"level\":2,\"stamina\":2.3},\n    \"description\": \"normal\",\n    \"url\": \"https://arkh-frontend.s3.us-west-1.amazonaws.com/spacejet/new1.png\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -183,7 +184,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://127.0.0.1:3030/inventory",
+							"raw": "https://127.0.0.1:3030/inventory-item",
 							"protocol": "https",
 							"host": [
 								"127",
@@ -193,14 +194,14 @@
 							],
 							"port": "3030",
 							"path": [
-								"inventory"
+								"inventory-item"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Inventory",
+					"name": "InventoryItem",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -220,7 +221,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://127.0.0.1:3030/inventory?id=f3373670-32a4-11ec-975d-23ac7291af2f",
+							"raw": "https://127.0.0.1:3030/inventory-item?id=f3373670-32a4-11ec-975d-23ac7291af2f",
 							"protocol": "https",
 							"host": [
 								"127",
@@ -230,7 +231,7 @@
 							],
 							"port": "3030",
 							"path": [
-								"inventory"
+								"inventory-item"
 							],
 							"query": [
 								{
@@ -295,7 +296,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"userId\": \"2695d150-2e65-11ec-a5db-0d14619fa286\",\n    \"inventoryId\": \"aea1e380-3500-11ec-916b-a967658a8393\",\n    \"quantity\": 1\n}",
+							"raw": "{\n    \"userId\": \"2695d150-2e65-11ec-a5db-0d14619fa286\",\n    \"inventoryItemId\": \"8a4df900-357e-11ec-bc67-41a95d6eca05\",\n    \"quantity\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -351,6 +352,45 @@
 							"port": "3030",
 							"path": [
 								"user-inventory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{XRENGINE_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://127.0.0.1:3030/user?Id=2695d150-2e65-11ec-a5db-0d14619fa286",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3030",
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "2695d150-2e65-11ec-a5db-0d14619fa286"
+								}
 							]
 						}
 					},

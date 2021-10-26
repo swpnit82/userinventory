@@ -25,9 +25,6 @@ export default (app: Application): any => {
       hooks: {
         beforeCount(options: any): void {
           options.raw = true
-        },
-        beforeUpdate(instance: any, options: any): void {
-          throw new Error("Can't update a type!")
         }
       },
       timestamps: false

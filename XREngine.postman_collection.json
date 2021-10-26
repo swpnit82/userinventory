@@ -296,7 +296,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"userId\": \"2695d150-2e65-11ec-a5db-0d14619fa286\",\n    \"inventoryItemId\": \"8a4df900-357e-11ec-bc67-41a95d6eca05\",\n    \"quantity\": 1\n}",
+							"raw": "{\n    \"userId\": \"2695d150-2e65-11ec-a5db-0d14619fa286\",\n    \"inventoryItemId\": \"8a4df900-357e-11ec-bc67-41a95d6eca05\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -315,6 +315,49 @@
 							"port": "3030",
 							"path": [
 								"user-inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserInventory",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{XRENGINE_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"25c7e650-304f-11ec-a90e-91582310c385\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:3030/user-inventory?userInventoryId=50635000-357e-11ec-bc67-41a95d6eca05",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3030",
+							"path": [
+								"user-inventory"
+							],
+							"query": [
+								{
+									"key": "userInventoryId",
+									"value": "50635000-357e-11ec-bc67-41a95d6eca05"
+								}
 							]
 						}
 					},
@@ -374,7 +417,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://127.0.0.1:3030/user?Id=2695d150-2e65-11ec-a5db-0d14619fa286",
+							"raw": "https://127.0.0.1:3030/user",
 							"protocol": "https",
 							"host": [
 								"127",
@@ -389,7 +432,8 @@
 							"query": [
 								{
 									"key": "Id",
-									"value": "2695d150-2e65-11ec-a5db-0d14619fa286"
+									"value": "2695d150-2e65-11ec-a5db-0d14619fa286",
+									"disabled": true
 								}
 							]
 						}

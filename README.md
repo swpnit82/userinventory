@@ -2,14 +2,14 @@
 
 API
 
-entities folder will merge in
+src folder will merge in
 
 /XREngine/packages/server-core/src
 
 New API are 
 
-inventory - WIP
+Inventory Item
 
-inventoryType - Done
+Inventory Item Type
 
-userInventory -WIP
+User Inventory
